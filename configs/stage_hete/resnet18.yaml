@@ -1,0 +1,15 @@
+hete_id:
+  1
+model:
+  resnet18
+num_hete_models:
+  3
+model_hete:
+  - 4
+  - 6
+  - 8
+#10,18,34
+portion:
+  - 0.4
+  - 0.4
+  - 0.2

@@ -1,0 +1,18 @@
+hete_id:
+  0
+model:
+  vgg16
+num_hete_models:
+  3
+ee_layer_locations:
+  - 8
+  - 10
+  - 13
+ee_layer_planes:
+  - 512
+  - 512
+  - 512
+portion:
+  - 0.4
+  - 0.4
+  - 0.2

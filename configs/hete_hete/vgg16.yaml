@@ -1,0 +1,18 @@
+hete_id:
+  2
+model:
+  vgg16
+num_hete_models:
+  3
+strategy:
+  hetero_fl
+mode_rate:
+  - 1
+  - 0.5
+  - 0.25
+proportion:
+  - 1
+  - 1
+  - 1
+rate:
+  1

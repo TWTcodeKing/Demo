@@ -1,0 +1,19 @@
+hete_id:
+  1
+model:
+  vit4
+num_hete_models:
+  3
+model_hete:
+  - 1
+  - 2
+  - 4
+#10,18,34
+portion:
+  - 0.4
+  - 0.4
+  - 0.2
+hidden_dim:
+  384
+num_heads:
+  8
