@@ -110,38 +110,8 @@ def main():
         global_model = Staged_VGG(args)
     else:
         global_model = SViT(args)
-    # fed_sever = fedavg_server(global_model,datasets,distributor,args)
-    # fed_sever = mfedavg_server(global_model, datasets, distributor, args)
-
-    # def generate_probability_array_with_dirichlet(alpha, length):
-    #     # 使用Dirichlet分布生成概率数组
-    #     probability_array = np.random.dirichlet([alpha] * length)
-    #
-    #     # 确保每个值大于0.1
-    #     min_prob = 0.1
-    #     if np.any(probability_array < min_prob):
-    #         # 剩余的概率
-    #         remaining_prob = 1 - min_prob * length
-    #         # 生成一个符合条件的随机数组
-    #         random_array = np.random.rand(length)
-    #         random_array = random_array / random_array.sum() * remaining_prob
-    #         probability_array = random_array + min_prob
-    #
-    #     return probability_array
-    #
-    # portion = generate_probability_array_with_dirichlet(args.alpha, args.num_hete_models)
-    # args.portion = portion
     fed_server = fed_aggs[args.fed_algo](global_model,datasets,distributor,args)
     fed_server.train()
-    # layer hete, stage hete, hete hete
-    # define levels
-    # init models, global model and local model (based on scenarios), comes from config file
-    # global models to evaluate: resnet34, vgg11, vit4
-    # init fed methods, avg,kd-based avg,random shuffled avg, momentum-based avg
-    # init training settings
-    # split datasets, iid split would be enough
-    # start training
-    # evaluate
     pass
 
 

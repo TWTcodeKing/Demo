@@ -407,25 +407,10 @@ def get_block_id(param_name,model_name, hete_id, layer2_block=None,return_id=Fal
 
 
 def stratified_sampling_indices(indices, value_arr=None, classes=None, class_counts=None, sample_fraction=0.5, shuffle=True):
-    """
-    根据给定的下标数组和对应的值数组，对下标进行分层采样。
-
-    参数：
-    - indices：numpy数组，下标数组
-    - value_arr：numpy数组，固定的值数组，长度应与可能的最大下标一致。如果为 None，则根据 classes 和 class_counts 生成。
-    - classes：类别列表，例如 [0, 1, 2]，当 value_arr 为 None 时需要提供
-    - class_counts：类别对应的数量列表，例如 [40, 40, 20]，当 value_arr 为 None 时需要提供
-    - sample_fraction：float，每个类别的采样比例，默认0.5
-    - shuffle：bool，是否打乱采样后的下标顺序，默认True
-
-    返回：
-    - sampled_indices：numpy数组，采样后的下标数组
-    """
     import numpy as np
     if value_arr is None:
-        assert classes is not None and class_counts is not None, "当 value_arr 为 None 时，需要提供 classes 和 class_counts"
+        assert classes is not None and class_counts is not None
         value_arr = np.concatenate([np.full(count, cls) for cls, count in zip(classes, class_counts)])
-    # 下面的代码与之前相同
     arr = value_arr[indices]
     unique_classes = np.unique(arr)
     sampled_indices = []

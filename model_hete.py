@@ -158,24 +158,6 @@ criterion = nn.CrossEntropyLoss().to(device)
 arr = np.arange(args.n_parties)
 
 
-# def generate_probability_array_with_dirichlet(alpha, length):
-#     # 使用Dirichlet分布生成概率数组
-#     probability_array = np.random.dirichlet([alpha] * length)
-#
-#     # 确保每个值大于0.1
-#     min_prob = 0.1
-#     if np.any(probability_array < min_prob):
-#         # 剩余的概率
-#         remaining_prob = 1 - min_prob * length
-#         # 生成一个符合条件的随机数组
-#         random_array = np.random.rand(length)
-#         random_array = random_array / random_array.sum() * remaining_prob
-#         probability_array = random_array + min_prob
-#
-#     return probability_array
-
-
-# portion = generate_probability_array_with_dirichlet(args.alpha, args.num_hete_models)
 
 if args.strategy == "inclusive_fl":
     # default inclusive fl args
