@@ -25,7 +25,7 @@ python run_experiments.py -hete_config=./configs/stage_hete/vit4.yaml -n_parties
 run FL withs SNNs under ratio heterogeneity
 
 ```
-python model_hete.py -trs=True -model=vit4 -strategy=hetero_fl -has_rate=True -config \ ./heterogeneity_configs/hetero_fl/vit4.yaml -snn -n_parties=10 -frac=1
+python model_hete.py -trs=True -model=vit4 -strategy=hetero_fl -has_rate=True -config  ./heterogeneity_configs/hetero_fl/vit4.yaml -snn -n_parties=10 -frac=1 -global_epochs=200 -local_epochs=3
 ```
 
 We now release a simple demo of HeteroFL for FL with SNNs with SViT, more codes will be released after the acceptance of this paper.
